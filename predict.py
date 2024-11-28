@@ -28,10 +28,29 @@ def export_to_video(
     writer.close()
     return output_video_path
 
-def inference(prompt, guidance_scale, pipe):
+def export_to_gif(
+    video_frames: Union[List[np.ndarray], List[PIL.Image.Image]], output_gif_path: str = None, fps: int = 10
+) -> str:
+    if output_gif_path is None:
+        output_gif_path = tempfile.NamedTemporaryFile(suffix=".gif").name
+    if isinstance(video_frames[0], np.ndarray):
+        video_frames = [(frame * 255).astype(np.uint8) for frame in video_frames]
+    elif isinstance(video_frames[0], PIL.Image.Image):
+        video_frames = [np.array(frame) for frame in video_frames]
+    imageio.mimsave(output_gif_path, video_frames, fps=fps)
+    return output_gif_path
+
+def inferenceToVideo(prompt, guidance_scale, pipe):
     try:
         output = pipe(prompt=prompt, guidance_scale=guidance_scale, num_inference_steps=4)
         export_to_video(output.frames[0], "/content/animation.mp4")
+    except Exception as error:
+        print(f"global exception: {error}")
+
+def inferenceToGif(prompt, guidance_scale, pipe):
+    try:
+        output = pipe(prompt=prompt, guidance_scale=guidance_scale, num_inference_steps=4)
+        export_to_gif(output.frames[0], "/content/animation.gif")
     except Exception as error:
         print(f"global exception: {error}")
 
@@ -48,6 +67,11 @@ class Predictor(BasePredictor):
         self,
         prompt: str = Input(default='A girl smiling'),
         guidance_scale: float = Input(default=1.0),
+        type: str = Input(default='video')
     ) -> Path:
-        output_image = inference(prompt, guidance_scale, self.pipe)
-        return Path('/content/animation.mp4')
+        if(type == "video"):
+            output_image = inferenceToVideo(prompt, guidance_scale, self.pipe)
+            return Path('/content/animation.mp4')
+        else:
+            output_image = inferenceToGif(prompt, guidance_scale, self.pipe)
+            return Path('/content/animation.gif')
