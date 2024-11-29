@@ -61,13 +61,13 @@ class Predictor(BasePredictor):
         step = 4
         adapter = MotionAdapter().to(device, dtype)
         adapter.load_state_dict(load_file('/content/models/animatediff_lightning_4step_diffusers.safetensors', device=device))
-        self.pipe = AnimateDiffPipeline.from_pretrained('/content/models/epiCRealism', motion_adapter=adapter, torch_dtype=dtype).to(device)
+        self.pipe = AnimateDiffPipeline.from_pretrained('/content/models/Mistoon_Anime', motion_adapter=adapter, torch_dtype=dtype).to(device)
         self.pipe.scheduler = EulerDiscreteScheduler.from_config(self.pipe.scheduler.config, timestep_spacing="trailing", beta_schedule="linear")
     def predict(
         self,
         prompt: str = Input(default='A girl smiling'),
         guidance_scale: float = Input(default=1.0),
-        type: str = Input(default='video')
+        type: str = Input(default='gif')
     ) -> Path:
         if(type == "video"):
             output_image = inferenceToVideo(prompt, guidance_scale, self.pipe)
