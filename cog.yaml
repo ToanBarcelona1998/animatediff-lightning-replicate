@@ -9,19 +9,19 @@ build:
     - pip install "numpy<2" --no-cache-dir
     - pip install notebook pyngrok pickleshare ipywidgets opencv-python imageio imageio-ffmpeg diffusers transformers
     - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ByteDance/AnimateDiff-Lightning/resolve/main/animatediff_lightning_4step_diffusers.safetensors -d /content/models -o animatediff_lightning_4step_diffusers.safetensors
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/emilianJR/epiCRealism/raw/main/feature_extractor/preprocessor_config.json -d /content/models/epiCRealism/feature_extractor -o preprocessor_config.json
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/emilianJR/epiCRealism/raw/main/safety_checker/config.json -d /content/models/epiCRealism/safety_checker -o config.json
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/emilianJR/epiCRealism/resolve/main/safety_checker/model.safetensors -d /content/models/epiCRealism/safety_checker -o model.safetensors
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/emilianJR/epiCRealism/raw/main/scheduler/scheduler_config.json -d /content/models/epiCRealism/scheduler -o scheduler_config.json
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/emilianJR/epiCRealism/raw/main/text_encoder/config.json -d /content/models/epiCRealism/text_encoder -o config.json
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/emilianJR/epiCRealism/resolve/main/text_encoder/model.safetensors -d /content/models/epiCRealism/text_encoder -o model.safetensors
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/emilianJR/epiCRealism/raw/main/tokenizer/merges.txt -d /content/models/epiCRealism/tokenizer -o merges.txt
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/emilianJR/epiCRealism/raw/main/tokenizer/special_tokens_map.json -d /content/models/epiCRealism/tokenizer -o special_tokens_map.json
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/emilianJR/epiCRealism/raw/main/tokenizer/tokenizer_config.json -d /content/models/epiCRealism/tokenizer -o tokenizer_config.json
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/emilianJR/epiCRealism/raw/main/tokenizer/vocab.json -d /content/models/epiCRealism/tokenizer -o vocab.json
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/emilianJR/epiCRealism/raw/main/unet/config.json -d /content/models/epiCRealism/unet -o config.json
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/emilianJR/epiCRealism/resolve/main/unet/diffusion_pytorch_model.safetensors -d /content/models/epiCRealism/unet -o diffusion_pytorch_model.safetensors
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/emilianJR/epiCRealism/raw/main/vae/config.json -d /content/models/epiCRealism/vae -o config.json
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/emilianJR/epiCRealism/resolve/main/vae/diffusion_pytorch_model.safetensors -d /content/models/epiCRealism/vae -o diffusion_pytorch_model.safetensors
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/emilianJR/epiCRealism/raw/main/model_index.json -d /content/models/epiCRealism -o model_index.json
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/raw/main/scheduler/scheduler_config.json -d /content/models/animagine/scheduler -o scheduler_config.json
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/raw/main/text_encoder/config.json -d /content/models/animagine/text_encoder -o config.json
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/resolve/main/text_encoder/model.safetensors -d /content/models/animagine/text_encoder -o model.safetensors
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/raw/main/text_encoder_2/config.json -d /content/models/animagine/text_encoder_2 -o config.json
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/resolve/main/text_encoder_2/model.safetensors -d /content/models/animagine/text_encoder_2 -o model.safetensors
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/raw/main/tokenizer/merges.txt -d /content/models/animagine/tokenizer -o merges.txt
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/raw/main/tokenizer/special_tokens_map.json -d /content/models/animagine/tokenizer -o special_tokens_map.json
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/raw/main/tokenizer/tokenizer_config.json -d /content/models/animagine/tokenizer -o tokenizer_config.json
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/raw/main/tokenizer/vocab.json -d /content/models/animagine/tokenizer -o vocab.json
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/raw/main/unet/config.json -d /content/models/animagine/unet -o config.json
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/resolve/main/unet/diffusion_pytorch_model.safetensors -d /content/models/animagine/unet -o diffusion_pytorch_model.safetensors
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/raw/main/vae/config.json -d /content/models/animagine/vae -o config.json
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/resolve/main/vae/diffusion_pytorch_model.safetensors -d /content/models/animagine/vae -o diffusion_pytorch_model.safetensors
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/resolve/main/animagine-xl-3.1.safetensors -d /content/models/animagine -o animagine-xl-3.1.safetensors
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/raw/main/model_index.json -d /content/models/animagine -o model_index.json
 predict: "/src/predict.py:Predictor"
