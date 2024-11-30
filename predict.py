@@ -40,16 +40,16 @@ def export_to_gif(
     imageio.mimsave(output_gif_path, video_frames, fps=fps)
     return output_gif_path
 
-def inferenceToVideo(prompt, guidance_scale, pipe):
+def inferenceToVideo(prompt, negative_prompt, guidance_scale, pipe):
     try:
-        output = pipe(prompt=prompt, guidance_scale=guidance_scale, num_inference_steps=4)
+        output = pipe(prompt=prompt, negative_prompt = negative_prompt, guidance_scale=guidance_scale, num_inference_steps=4)
         export_to_video(output.frames[0], "/content/animation.mp4")
     except Exception as error:
         print(f"global exception: {error}")
 
-def inferenceToGif(prompt, guidance_scale, pipe):
+def inferenceToGif(prompt, negative_prompt, guidance_scale, pipe):
     try:
-        output = pipe(prompt=prompt, guidance_scale=guidance_scale, num_inference_steps=4)
+        output = pipe(prompt=prompt, negative_prompt = negative_prompt, guidance_scale=guidance_scale, num_inference_steps=4)
         export_to_gif(output.frames[0], "/content/animation.gif")
     except Exception as error:
         print(f"global exception: {error}")
