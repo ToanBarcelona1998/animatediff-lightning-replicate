@@ -67,7 +67,7 @@ class Predictor(BasePredictor):
         self,
         prompt: str = Input(default='A girl smiling'),
         negative_prompt: str = Input(default='(worst quality, low quality, letterboxed)'),
-        guidance_scale: float = Input(default=8.0),
+        guidance_scale: float = Input(default=1.0),
         type: str = Input(default='gif' , choices = ['video', 'gif'])
     ) -> Path:
         if(type == "video"):
