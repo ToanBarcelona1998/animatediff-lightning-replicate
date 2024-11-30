@@ -61,13 +61,13 @@ class Predictor(BasePredictor):
         step = 4
         adapter = MotionAdapter().to(device, dtype)
         adapter.load_state_dict(load_file('/content/models/animatediff_lightning_4step_diffusers.safetensors', device=device))
-        self.pipe = AnimateDiffPipeline.from_pretrained('/content/models/animagine', motion_adapter=adapter, torch_dtype=dtype).to(device)
+        self.pipe = AnimateDiffPipeline.from_pretrained('/content/models/toonyou_beta6', motion_adapter=adapter, torch_dtype=dtype).to(device)
         self.pipe.scheduler = EulerDiscreteScheduler.from_config(self.pipe.scheduler.config, timestep_spacing="trailing", beta_schedule="linear")
     def predict(
         self,
         prompt: str = Input(default='A girl smiling'),
-        negative_prompt: str = Input(default='nsfw, longbody, lowres, bad anatomy, bad hands, missing fingers, pubic hair, extra digit, fewer digits, cropped, worst quality, low quality, very displeasing'),
-        guidance_scale: float = Input(default=1.0),
+        negative_prompt: str = Input(default='(worst quality, low quality, letterboxed)'),
+        guidance_scale: float = Input(default=8.0),
         type: str = Input(default='gif' , choices = ['video', 'gif'])
     ) -> Path:
         if(type == "video"):

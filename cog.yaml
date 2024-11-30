@@ -9,19 +9,20 @@ build:
     - pip install "numpy<2" --no-cache-dir
     - pip install notebook pyngrok pickleshare ipywidgets opencv-python imageio imageio-ffmpeg diffusers transformers
     - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ByteDance/AnimateDiff-Lightning/resolve/main/animatediff_lightning_4step_diffusers.safetensors -d /content/models -o animatediff_lightning_4step_diffusers.safetensors
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/raw/main/scheduler/scheduler_config.json -d /content/models/animagine/scheduler -o scheduler_config.json
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/raw/main/text_encoder/config.json -d /content/models/animagine/text_encoder -o config.json
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/resolve/main/text_encoder/model.safetensors -d /content/models/animagine/text_encoder -o model.safetensors
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/raw/main/text_encoder_2/config.json -d /content/models/animagine/text_encoder_2 -o config.json
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/resolve/main/text_encoder_2/model.safetensors -d /content/models/animagine/text_encoder_2 -o model.safetensors
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/raw/main/tokenizer/merges.txt -d /content/models/animagine/tokenizer -o merges.txt
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/raw/main/tokenizer/special_tokens_map.json -d /content/models/animagine/tokenizer -o special_tokens_map.json
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/raw/main/tokenizer/tokenizer_config.json -d /content/models/animagine/tokenizer -o tokenizer_config.json
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/raw/main/tokenizer/vocab.json -d /content/models/animagine/tokenizer -o vocab.json
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/raw/main/unet/config.json -d /content/models/animagine/unet -o config.json
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/resolve/main/unet/diffusion_pytorch_model.safetensors -d /content/models/animagine/unet -o diffusion_pytorch_model.safetensors
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/raw/main/vae/config.json -d /content/models/animagine/vae -o config.json
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/resolve/main/vae/diffusion_pytorch_model.safetensors -d /content/models/animagine/vae -o diffusion_pytorch_model.safetensors
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/resolve/main/animagine-xl-3.1.safetensors -d /content/models/animagine -o animagine-xl-3.1.safetensors
-    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/cagliostrolab/animagine-xl-3.1/raw/main/model_index.json -d /content/models/animagine -o model_index.json
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/frankjoshua/toonyou_beta6/raw/main/feature_extractor/preprocessor_config.json -d /content/models/toonyou_beta6/feature_extractor -o preprocessor_config.json
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/frankjoshua/toonyou_beta6/raw/main/safety_checker/config.json -d /content/models/toonyou_beta6/safety_checker -o config.json
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/frankjoshua/toonyou_beta6/raw/main/safety_checker/pytorch_model.bin -d /content/models/toonyou_beta6/safety_checker -o pytorch_model.bin
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/frankjoshua/toonyou_beta6/raw/main/scheduler/scheduler_config.json -d /content/models/toonyou_beta6/scheduler -o scheduler_config.json
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/frankjoshua/toonyou_beta6/raw/main/text_encoder/config.json -d /content/models/toonyou_beta6/text_encoder -o config.json
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/frankjoshua/toonyou_beta6/resolve/main/text_encoder/pytorch_model.bin -d /content/models/toonyou_beta6/text_encoder -o pytorch_model.bin
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/frankjoshua/toonyou_beta6/raw/main/tokenizer/merges.txt -d /content/models/toonyou_beta6/tokenizer -o merges.txt
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/frankjoshua/toonyou_beta6/raw/main/tokenizer/special_tokens_map.json -d /content/models/toonyou_beta6/tokenizer -o special_tokens_map.json
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/frankjoshua/toonyou_beta6/raw/main/tokenizer/tokenizer_config.json -d /content/models/toonyou_beta6/tokenizer -o tokenizer_config.json
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/frankjoshua/toonyou_beta6/raw/main/tokenizer/vocab.json -d /content/models/toonyou_beta6/tokenizer -o vocab.json
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/frankjoshua/toonyou_beta6/raw/main/unet/config.json -d /content/models/toonyou_beta6/unet -o config.json
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/frankjoshua/toonyou_beta6/resolve/main/unet/diffusion_pytorch_model.bin -d /content/models/toonyou_beta6/unet -o diffusion_pytorch_model.bin
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/frankjoshua/toonyou_beta6/raw/main/vae/config.json -d /content/models/toonyou_beta6/vae -o config.json
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/frankjoshua/toonyou_beta6/resolve/main/vae/diffusion_pytorch_model.bin -d /content/models/toonyou_beta6/vae -o diffusion_pytorch_model.bin
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/frankjoshua/toonyou_beta6/raw/main/model_index.json -d /content/models/toonyou_beta6 -o model_index.json
+    - aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/frankjoshua/toonyou_beta6/resolve/main/toonyou_beta6.safetensors -d /content/models/toonyou_beta6 -o toonyou_beta6.safetensors
 predict: "/src/predict.py:Predictor"
